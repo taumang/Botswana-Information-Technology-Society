@@ -7,7 +7,11 @@ const app = express()
 app.use(bodyParser.urlencoded(({extended:false})))
 app.use(bodyParser.json());
 
-app.post(`./index.js`, (req,res)=>{
+app.get(`/`,(req,res)=>{
+    res.sendFile(__dirname + '../index.html')
+})
+
+app.post(`/home_form_index`, (req,res)=>{
     const {
         name,
         email,

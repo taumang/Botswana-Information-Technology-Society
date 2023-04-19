@@ -162,7 +162,7 @@
 							<h2 class="major">Get in touch</h2>
 							<p>Join us to become a member or inquire about the network of IT services/products we can help with.</p>
 							<!--  -->
-							<form method="post" action="#" id="email_form">
+							<form method="post" action="/home_form_index" >
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -209,27 +209,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<!-- Script for the form in the footer -->
-			<script>
-				
-				const form = document.querySelector('#email_form')
-
-				form.addEventListener('submit',async (event)=>{
-					event.preventDefault()
-
-					const formData = new formData(form)
-					const url = './submit_form'
-
-					const response = await fetch(url,{
-						method:'POST',
-						body:formData,
-					})
-
-					return response.ok ? alert(`Thank you you'll get a response shortly.`) : alert(`Oops, there was an issue with the form, please try again later.`)
-				})
-
-			</script>
 
 	</body>
 </html>
