@@ -216,6 +216,8 @@
 				const form = document.querySelector('#email_form')
 
 				form.addEventListener('submit',async (event)=>{
+					event.preventDefault()
+
 					const formData = new formData(form)
 					const url = './submit_form'
 
