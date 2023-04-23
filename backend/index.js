@@ -33,17 +33,17 @@ app.post(`/home_form_index`, (req,res)=>{
 
     const mailOptions = {
          from:'kagishoph@gmail.com',
-         to:'09taumang@gmail.com',
+         to:email,
          subject:'New form submission from BITS website',
          text:`Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
      }
 
     transporter.sendMail(mailOptions,(error,info)=>{
         if (error){  
-        console.log(error) 
+        // console.log(error) 
         res.status(500).send('error:could not send email')
         }else{
-         console.log('Email sent:',info.response)
+        //  console.log('Email sent:',info.response)
          res.send(`
          <section id="success">
             <div class="inner">
