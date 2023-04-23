@@ -26,17 +26,17 @@ app.post(`/home_form_index`, (req,res)=>{
     const transporter = nodemailer.createTransport({
         service:'gmail',
         auth:{
-            user:'kagsiho@gmail.com',
+            user:'kagsihoph@gmail.com',
             pass:'09Taumang',
         },
     })
 
-    // const mailOptions = {
-    //     from:'kagishoph@gmail.com',
-    //     to:'09taumang@gmail.com',
-    //     subject:'New form submission from BITS website',
-    //     text:`Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-    // }
+    const mailOptions = {
+         from:'kagishoph@gmail.com',
+         to:'09taumang@gmail.com',
+         subject:'New form submission from BITS website',
+         text:`Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+     }
 
     transporter.sendMail(mailOptions,(error,info)=>{
         if (error){  
