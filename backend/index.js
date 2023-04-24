@@ -27,13 +27,13 @@ app.post(`/home_form_index`, (req,res)=>{
         service:'gmail',
         auth:{
             user:'kagsihoph@gmail.com',
-            pass:'09Taumang',
+            pass:'obzjkzrfonxcmfrb',
         },
     })
 
     const mailOptions = {
          from:'kagishoph@gmail.com',
-         to:email,
+         to: document.getElementById('email').value,
          subject:'New form submission from BITS website',
          text:`Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
      }

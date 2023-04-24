@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" type="image/x-icon" href="./images/header2-removebg-preview.png">
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	
 	</head>
 	<body class="is-preload">
@@ -162,7 +163,7 @@
 							<h2 class="major">Get in touch</h2>
 							<p>Join us to become a member or inquire about the network of IT services/products we can help with.</p>
 							<!--  -->
-							<form method="post" action="/home_form_index" >
+							<form id="contact_form"  >
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -178,11 +179,10 @@
 									</div>
 								</div>
 								<ul class="actions">
-									<a href="#success"><li><input type="submit" value="Send Message" /></li></a>
+									<a href="#success"><li><input type="submit" value="Send Message" onclick="reset();"/></li></a>
 								</ul>
 							</form>
 
-							<!-- section of submit message -->
 							
 							<!--  -->
 							<ul class="contact">
@@ -212,6 +212,48 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- section of submit message -->
+							
+			<script>
+				// all elements from the DOM/form section
+				const contactForm = docoument.querySelector("#contact_form")
+				const submitButton = document.querySelector(".actions")
+				const nameInput = document.querySelector("#name")
+				const emailInput = document.querySelector("#email")
+				const messageInput =document.querySelector("#message")
+
+				const publicKey = "RdyLeNo0yeJ2NjKpR"
+				const serverID = "service_vcyux1b"
+				const templateID = "template_za42je5"
+
+				emialjs.init(publicKey)
+
+				contactForm.addEventListener("submit",e=>{
+
+					e.preventDefault()
+
+					submitButton.innerText = "Just a Moment..."
+
+					const inputFields = {
+						name: nameInput.value,
+						email: emailInput.value,
+						message: meessageInput.value,
+					}
+
+					emialjs.send(serviceID,templateID,inputFields)
+						.then(()=>{
+							submitButton.innerText = 'Message Sent!'
+
+							nameInput.value = ''
+							emailInput.value = ''
+							messageInput.value = ''
+						},(error)=>{
+							console.log(error)
+
+							submitButton.innerHTML = 'Something went wrong'
+						})
+				})
+			</script>
 
 	</body>
 </html>
