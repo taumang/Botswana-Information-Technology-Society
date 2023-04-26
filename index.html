@@ -163,24 +163,24 @@
 							<h2 class="major">Get in touch</h2>
 							<p>Join us to become a member or inquire about the network of IT services/products we can help with.</p>
 							<!--  -->
-							<form id="contact_form">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<a href="#success"><li><input type="submit" value="Send Message" onclick="reset();"/></li></a>
-								</ul>
+							<form action="https://formspree.io/f/mlekavjl" method="POST">
+								
+									
+										<!-- <label for="name">Name</label> -->
+										<input name="name" type="text" id="name" placeholder="Full Name"/>
+									
+									
+										<!-- <label for="email">Email</label> -->
+										<input name="email" type="email" id="email" placeholder="Email Address" />
+									
+									
+										<!-- <label for="message">Message</label> -->
+										<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+									
+								
+								<input type="submit" value="Send"/>
+								
+								
 							</form>
 
 							
@@ -216,43 +216,43 @@
 							
 			<script>
 				// all elements from the DOM/form section
-				const contactForm = docoument.querySelector("#contact_form")
-				const submitButton = document.querySelector(".actions")
-				const nameInput = document.querySelector("#name")
-				const emailInput = document.querySelector("#email")
-				const messageInput =document.querySelector("#message")
+				// const contactForm = docoument.querySelector("#contact_form")
+				// const submitButton = document.querySelector(".actions")
+				// const nameInput = document.querySelector("#name")
+				// const emailInput = document.querySelector("#email")
+				// const messageInput =document.querySelector("#message")
 
-				const publicKey = "RdyLeNo0yeJ2NjKpR"
-				const serverID = "service_vcyux1b"
-				const templateID = "template_za42je5"
+				// const publicKey = "RdyLeNo0yeJ2NjKpR"
+				// const serverID = "service_vcyux1b"
+				// const templateID = "template_za42je5"
 
-				emialjs.init(publicKey)
+				// emialjs.init(publicKey)
 
-				contactForm.addEventListener("submit",e=>{
+				// contactForm.addEventListener("submit",e=>{
 
-					e.preventDefault()
+				// 	e.preventDefault()
 
-					submitButton.innerText = "Just a Moment..."
+				// 	submitButton.innerText = "Just a Moment..."
 
-					const inputFields = {
-						name: nameInput.value,
-						email: emailInput.value,
-						message: meessageInput.value,
-					}
+				// 	const inputFields = {
+				// 		name: nameInput.value,
+				// 		email: emailInput.value,
+				// 		message: meessageInput.value,
+				// 	}
 
-					emialjs.send(serviceID,templateID,inputFields)
-						.then(()=>{
-							submitButton.innerText = 'Message Sent!'
+				// 	emialjs.send(serviceID,templateID,inputFields)
+				// 		.then(()=>{
+				// 			submitButton.innerText = 'Message Sent!'
 
-							nameInput.value = ''
-							emailInput.value = ''
-							messageInput.value = ''
-						},(error)=>{
-							console.log(error)
+				// 			nameInput.value = ''
+				// 			emailInput.value = ''
+				// 			messageInput.value = ''
+				// 		},(error)=>{
+				// 			console.log(error)
 
-							submitButton.innerHTML = 'Something went wrong'
-						})
-				})
+				// 			submitButton.innerHTML = 'Something went wrong'
+				// 		})
+				// })
 			</script>
 
 	</body>
