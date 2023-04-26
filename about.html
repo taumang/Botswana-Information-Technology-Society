@@ -419,25 +419,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>Join us to become a member or inquire about the network of IT services/products we can help with.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
+							<form action="https://formspree.io/f/mlekavjl" method="POST" >
+								
+								<!-- <label for="name">Name</label> -->
+								<input name="name" type="text" id="name" placeholder="Full Name"/>
+								<!-- <label for="email">Email</label> -->
+								<input name="email" type="email" id="email" placeholder="Email Address" />
+								<!-- <label for="message">Message</label> -->
+								<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+						<input type="submit" value="Send"/>
+						
+						
+					</form>
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									Botswana Information Technology Society<br />
