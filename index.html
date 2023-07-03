@@ -15,35 +15,32 @@
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 				<style>
-					#banner-event {
-					  position: fixed;
-					  bottom: 0;
-					  width: 100%;
-					  background-color: #f1f1f1;
-					  color: #333;
-					  padding: 5px;
-					  text-align: center;
-					  
-					  /* Add any additional styles here */
-					}
-					#banner-event::before,
-					#banner-event::after {
-  					content: '';
-					position: absolute;
+					.banner-event{
+					position: fixed;
+					bottom: 0;
+					left: 0;
 					width: 100%;
-					height: 30px; /* Adjust the thickness of the strips as needed */
+					/* background-color: rgba(255, 165, 0, 0.8); */
+					padding: 10px;
+					text-align: center;
 					}
-					#banner-event::before {
-  					top: 0;
-  					background-color: orange;
-  					transform: skewY(-4deg);
-}
 
-					#banner-event::after {
-  					bottom: 0;
-  					background-color: green;
-  					transform: skewY(4deg);
-}
+					.banner-text {
+						color: #000000;
+						font-size: 20px;
+						font-weight: bold;
+					}
+
+					.banner-event::after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 109, 0, 0.986);
+					z-index: -1;
+					}
 				  </style>
 				  
 
@@ -79,11 +76,14 @@
 							<p>BITS is a non-profit organization in Botswana that represents diverse IT stakeholders with a common interest in driving innovation and maintaining high standards of practice in the IT profession. They strive to maximize returns on IT investments in the country.</a></p>
 						</div>
 					</section>
-					<section id="banner">
-						<div class="inner">
-							<h2></h2>
-							<img src="./images/1687940200582.jpg" alt="logo">
-					</section>
+					<section id="banner-event-new">
+						<section id="banner">
+							<div class="inner">
+								<h2>Upcoming Event!</h2>
+								<p>Content</p>
+								<img src="./images/1687940200582.jpg" alt="logo">
+						</section>
+				</section>
 
 				<!-- Wrapper -->
 					<section id="wrapper">
@@ -203,10 +203,15 @@
 							</ul>
 						</div>
 					</section>
-					<div id="banner-event">
-						<p>.
-						<a href="#">Click here</a> for more information.</p>
-					  </div>
+					
+					
+						<div class="banner-event">
+							<p class="banner-text">Technology Information Confederation Africa.</p>
+							<p class="banner-text"><a href="#">Click here</a> for more info.</p>
+						  </div>
+					</section>
+					
+					  
 					  
 
 			</div>
