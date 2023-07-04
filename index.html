@@ -20,14 +20,15 @@
 					bottom: 0;
 					left: 0;
 					width: 100%;
-					/* background-color: rgba(255, 165, 0, 0.8); */
+					background-color: rgba(44, 42, 42, 0.5);
 					padding: 10px;
 					text-align: center;
 					}
 
 					.banner-text {
 						color: #000000;
-						font-size: 20px;
+						font-family: Lemon milk,sans-serif;
+						font-size: 17px;
 						font-weight: bold;
 					}
 
@@ -38,8 +39,20 @@
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-color: rgba(0, 109, 0, 0.986);
+					background: rgb(12,71,0);
+					background: linear-gradient(90deg, rgba(12,71,0,1) 40%, rgba(227,93,0,1) 63%);  
 					z-index: -1;
+					}
+
+					.column-container{
+						display:flex;
+					}
+					.text-column{
+						flex: 1;
+						margin-right: 25px; 
+					}	
+					.image-column{
+						flex: 0.1;
 					}
 				  </style>
 				  
@@ -79,9 +92,14 @@
 					<section id="banner-event-new">
 						<section id="banner">
 							<div class="inner">
-								<h2>Upcoming Event!</h2>
-								<p><a href="https://drive.google.com/file/d/1qA8nEEmMKH3FOM7MAoHHBYQKdmCKgq9s/view">Content</a></p>
-								<img src="./images/1687940200582.jpg" alt="logo">
+								<h2 >TICON Africa Conference</h2>
+								<div class="column-container">
+								<p class="text-column">
+									Experience the revolutionary Inaugural TICONA conference, propelling Africa into the future with cutting-edge innovations. Hosted by ICTAU in vibrant Kampala, this event unites ICT talent from across the continent, creating a brighter future. TICONA challenges technology trends, empowers professionals, and offers an engaging experience. Join us on the journey to power Africa beyond 2030, setting the stage for unprecedented ICT advancements. <br/> <b><a href="https://ticonafrica.org/ticon-africa-conference/">Learn More</a></b>
+								</p>
+								<p class="image-column"><img src="./images/1687940200582.jpg" alt="logo" style="width: 700px; height: 250;"></p>
+							</div>
+								
 						</section>
 				</section>
 
