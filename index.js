@@ -1,7 +1,7 @@
 const zlib = require('zlib');
 const fs = require('fs');
 
-const directoryPath = './https://botswana-information-technology-society.vercel.app/';
+const directoryPath = 'https://bits.org.bw/';
 
 const htmlFiles = fs.readdirSync(directoryPath).filter(file => file.endsWith('.html'));
 

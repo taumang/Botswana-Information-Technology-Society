@@ -75,7 +75,7 @@
 							<div class="row gtr-uniform">
 								
 								<div class="column-container">
-									<p class="image-column"><img src="./images/My project.jpg" alt="logo" style="width: 550px; height: 250;"></p> 
+									<p class="image-column"><img src="./images/My project.jpg" alt="logo" style="width: 450px; height: 150;"></p> 
 					   </div> 
 								<p class="text-column"><a href="https://ticonafrica.org/">TICONA</a> Experience the revolutionary Inaugural TICONA conference, propelling Africa into the future with cutting-edge innovations. Hosted by ICTAU in vibrant Kampala, this event unites ICT talent from across the continent, creating a brighter future. TICONA challenges technology trends, empowers professionals, and offers an engaging experience. Join us on the journey to power Africa beyond 2030, setting the stage for unprecedented ICT advancements. <br/><br/> <b><a href="https://ticonafrica.org/ticon-africa-conference/">Learn more</a></b></div> 
 								</p>
@@ -163,20 +163,115 @@
 							</section>
 
 					</section>
+					<div id="overlay"></div>
 
+					<!-- The pop-up box -->
+					<div id="popup">
+					  <div id="popup-content">
+						<!-- Your pop-up content goes here -->
+						<div id="column">
+							<p 
+							style="font-family: Raleway, Helvetica, sans-serif;
+							text-transform:uppercase;"
+							>Hello, this is a smooth pop-up!</p>
+						</div>
+						<img src="./images/Artboard 5 copy 3(1).png" alt="" style="width: 67%; height:auto;">
+						<img src="./images/AfricaPro-Organisers.png" alt="" style="width: 30%; height:auto;">
+						<button id="close-btn">Close</button>
+					  </div>
+					</div>
+					<!-- Styles -->
+					<style>
+							#overlay {
+							position: fixed;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background-color: rgba(0, 0, 0, 0.5);
+							z-index: 1;
+							opacity: 0;
+							visibility: hidden;
+							transition: opacity 0.3s ease;
+							}
+
+							#column{
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+							}
+
+							#popup {
+							position: fixed;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							background-color: #3f4e85;
+							padding: 20px;
+							border-radius: 5px;
+							box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+							z-index: 2;
+							opacity: 0;
+							visibility: hidden;
+							transition: opacity 0.3s ease, visibility 0.3s;
+							}
+
+							#popup-content {
+							text-align: center;
+							}
+
+							#close-btn {
+							margin-top: 10px;
+							}
+					</style>
+					<!-- scripts -->
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+  // Wait for the pop-up to show after 3 seconds (adjust the delay as needed)
+						setTimeout(showPopup, 3000);
+						});
+
+						function showPopup() {
+						var overlay = document.getElementById("overlay");
+						var popup = document.getElementById("popup");
+
+						overlay.style.opacity = "1";
+						overlay.style.visibility = "visible";
+						popup.style.opacity = "1";
+						popup.style.visibility = "visible";
+
+						// Close pop-up when the overlay or close button is clicked
+						overlay.addEventListener("click", closePopup);
+						document.getElementById("close-btn").addEventListener("click", closePopup);
+						}
+
+						function closePopup() {
+						var overlay = document.getElementById("overlay");
+						var popup = document.getElementById("popup");
+
+						overlay.style.opacity = "0";
+						overlay.style.visibility = "hidden";
+						popup.style.opacity = "0";
+						popup.style.visibility = "hidden";
+
+						// Remove event listeners to prevent memory leaks
+						overlay.removeEventListener("click", closePopup);
+						document.getElementById("close-btn").removeEventListener("click", closePopup);
+						}
+					</script>
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Get in touch</h2>
+							<!-- <h2 class="major">Get in touch</h2>
 							<p>Join us to become a member or inquire about the network of IT services/products we can help with.</p>
-							<!--  -->
+						
 							<form action="https://formspree.io/f/mlekavjl" method="POST" >
 								
-										<!-- <label for="name">Name</label> -->
+										
 										<input name="name" type="text" id="name" placeholder="Full Name"/>
-										<!-- <label for="email">Email</label> -->
+										
 										<input name="email" type="email" id="email" placeholder="Email Address" />
-										<!-- <label for="message">Message</label> -->
+										
 										<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
 								<input type="submit" value="Send"/>
 								
@@ -184,30 +279,25 @@
 							</form>
 
 							
-							<!--  -->
+							
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									Botswana Information Technology Society<br />
 									Gaborone <br />
 								</li>
 								<li class="icon solid fa-phone">7170 0545 </li>
-								<!-- <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li> -->
-								<!-- <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li> -->
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<!-- <li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li> -->
+								<
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li> -->
+								
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Botswana Information Technology Society. All rights reserved.</li><li>Design: <a > MIIS Business Botswana</a></li>
+								<li>&copy; Botswana Information Technology Society. All rights reserved.</li><li>Design: <a > Kagisho Phahlamohlaka </a></li>
 								<li><a href="./images/header2-removebg-preview - Copy.png"></a></li>
 							</ul>
 						</div>
-					</section>
+					</section> 
 					
 					
-						<!-- <div class="banner-event">
-							<p class="banner-text">Technology Information Confederation Africa.</p>
-							<p class="banner-text"><a href="index.html#banner-event-new">Click here</a> for more info.</p>
-						  </div> -->
 					</section>
 					
 					  
